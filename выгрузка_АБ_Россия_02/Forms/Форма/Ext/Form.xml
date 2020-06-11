@@ -40,11 +40,72 @@
 					<HorizontalStretch>true</HorizontalStretch>
 					<ExtendedTooltip name="ОсновноеРасширеннаяПодсказка" id="4"/>
 					<ChildItems>
+						<InputField name="ПериодВыгрузки" id="7">
+							<DataPath>ПериодВыгрузки</DataPath>
+							<ContextMenu name="ПериодВыгрузкиКонтекстноеМеню" id="8"/>
+							<ExtendedTooltip name="ПериодВыгрузкиРасширеннаяПодсказка" id="9"/>
+							<Events>
+								<Event name="OnChange">ПериодПриИзменении</Event>
+							</Events>
+						</InputField>
+						<RadioButtonField name="Поле1" id="87">
+							<DataPath>Код</DataPath>
+							<RadioButtonType>Auto</RadioButtonType>
+							<ColumnsCount>2</ColumnsCount>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>585</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">585</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>982</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">982</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="Поле1КонтекстноеМеню" id="88"/>
+							<ExtendedTooltip name="Поле1РасширеннаяПодсказка" id="89"/>
+						</RadioButtonField>
+						<InputField name="ПутьВыгрузки" id="10">
+							<DataPath>ПутьВыгрузки</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Каталог выгрузки</v8:content>
+								</v8:item>
+							</Title>
+							<Width>70</Width>
+							<MaxWidth>8</MaxWidth>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ChoiceButton>true</ChoiceButton>
+							<ContextMenu name="ПутьВыгрузкиКонтекстноеМеню" id="11"/>
+							<ExtendedTooltip name="ПутьВыгрузкиРасширеннаяПодсказка" id="12"/>
+							<Events>
+								<Event name="StartChoice">ПутьВыгрузкиНачалоВыбора</Event>
+							</Events>
+						</InputField>
 						<UsualGroup name="Выгрузка" id="30">
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Выгрузка файлов для РРКЦ</v8:content>
+									<v8:content>Выгрузка начислений для РРКЦ</v8:content>
 								</v8:item>
 							</Title>
 							<TitleTextColor>#000080</TitleTextColor>
@@ -59,14 +120,6 @@
 							<Group>Vertical</Group>
 							<ExtendedTooltip name="ВыгрузкаРасширеннаяПодсказка" id="31"/>
 							<ChildItems>
-								<InputField name="ПериодВыгрузки" id="7">
-									<DataPath>ПериодВыгрузки</DataPath>
-									<ContextMenu name="ПериодВыгрузкиКонтекстноеМеню" id="8"/>
-									<ExtendedTooltip name="ПериодВыгрузкиРасширеннаяПодсказка" id="9"/>
-									<Events>
-										<Event name="OnChange">ПериодПриИзменении</Event>
-									</Events>
-								</InputField>
 								<CheckBoxField name="ВыгружатьСчетчики" id="81">
 									<DataPath>ВыгружатьСчетчики</DataPath>
 									<CheckBoxType>Auto</CheckBoxType>
@@ -85,59 +138,6 @@
 									<ContextMenu name="ТолькоСчетчикиКонтекстноеМеню" id="85"/>
 									<ExtendedTooltip name="ТолькоСчетчикиРасширеннаяПодсказка" id="86"/>
 								</CheckBoxField>
-								<RadioButtonField name="Поле1" id="87">
-									<DataPath>Код</DataPath>
-									<RadioButtonType>Auto</RadioButtonType>
-									<ColumnsCount>2</ColumnsCount>
-									<ChoiceList>
-										<xr:Item>
-											<xr:Presentation/>
-											<xr:CheckState>0</xr:CheckState>
-											<xr:Value xsi:type="FormChoiceListDesTimeValue">
-												<Presentation>
-													<v8:item>
-														<v8:lang>ru</v8:lang>
-														<v8:content>585</v8:content>
-													</v8:item>
-												</Presentation>
-												<Value xsi:type="xs:string">585</Value>
-											</xr:Value>
-										</xr:Item>
-										<xr:Item>
-											<xr:Presentation/>
-											<xr:CheckState>0</xr:CheckState>
-											<xr:Value xsi:type="FormChoiceListDesTimeValue">
-												<Presentation>
-													<v8:item>
-														<v8:lang>ru</v8:lang>
-														<v8:content>982</v8:content>
-													</v8:item>
-												</Presentation>
-												<Value xsi:type="xs:string">982</Value>
-											</xr:Value>
-										</xr:Item>
-									</ChoiceList>
-									<ContextMenu name="Поле1КонтекстноеМеню" id="88"/>
-									<ExtendedTooltip name="Поле1РасширеннаяПодсказка" id="89"/>
-								</RadioButtonField>
-								<InputField name="ПутьВыгрузки" id="10">
-									<DataPath>ПутьВыгрузки</DataPath>
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Каталог выгрузки</v8:content>
-										</v8:item>
-									</Title>
-									<Width>70</Width>
-									<MaxWidth>8</MaxWidth>
-									<HorizontalStretch>false</HorizontalStretch>
-									<ChoiceButton>true</ChoiceButton>
-									<ContextMenu name="ПутьВыгрузкиКонтекстноеМеню" id="11"/>
-									<ExtendedTooltip name="ПутьВыгрузкиРасширеннаяПодсказка" id="12"/>
-									<Events>
-										<Event name="StartChoice">ПутьВыгрузкиНачалоВыбора</Event>
-									</Events>
-								</InputField>
 								<Button name="СформироватьФайл" id="19">
 									<Type>UsualButton</Type>
 									<Representation>PictureAndText</Representation>
@@ -148,25 +148,45 @@
 										<xr:Ref>StdPicture.Write</xr:Ref>
 										<xr:LoadTransparent>true</xr:LoadTransparent>
 									</Picture>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Выгрузить начисления</v8:content>
+										</v8:item>
+									</Title>
 									<ExtendedTooltip name="СформироватьФайлРасширеннаяПодсказка" id="20"/>
 								</Button>
 							</ChildItems>
 						</UsualGroup>
-						<UsualGroup name="Загрузка" id="35">
+						<UsualGroup name="Выгрузка1" id="90">
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Загрузка</v8:content>
+									<v8:content>Выгрузка корректировок для РРКЦ</v8:content>
 								</v8:item>
 							</Title>
+							<TitleTextColor>#000080</TitleTextColor>
+							<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
 							<ToolTip>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Загрузка</v8:content>
+									<v8:content>Выгрузка1</v8:content>
 								</v8:item>
 							</ToolTip>
-							<Group>Vertical</Group>
-							<ExtendedTooltip name="ЗагрузкаРасширеннаяПодсказка" id="36"/>
+							<ExtendedTooltip name="Выгрузка1РасширеннаяПодсказка" id="91"/>
+							<ChildItems>
+								<Button name="ВыгрузитьКорректировки" id="94">
+									<Type>UsualButton</Type>
+									<Representation>PictureAndText</Representation>
+									<Width>30</Width>
+									<CommandName>Form.Command.ВыгрузитьКорректировки</CommandName>
+									<Picture>
+										<xr:Ref>StdPicture.Write</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<ExtendedTooltip name="ВыгрузитьКорректировкиРасширеннаяПодсказка" id="95"/>
+								</Button>
+							</ChildItems>
 						</UsualGroup>
 					</ChildItems>
 				</Page>
@@ -613,6 +633,21 @@
 			</ToolTip>
 			<Action>ЗаполнитьСписокДомов</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ВыгрузитьКорректировки" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выгрузить корректировки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выгрузить корректировки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ВыгрузитьКорректировки</Action>
 		</Command>
 	</Commands>
 </Form>
